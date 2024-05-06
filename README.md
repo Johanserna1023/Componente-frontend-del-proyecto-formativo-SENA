@@ -32,7 +32,7 @@ Para ejecutar el proyecto localmente, necesitas tener instalado [Node.js](https:
 
 Aún no hay disponible una Live Demo 😔.
 
-
+link Repositorio (https://github.com/Johanserna1023/Componente-frontend-del-proyecto-formativo-SENA.git)
 ## Sobre mí
 
 Soy un desarrollador web apasionado por crear proyectos innovadores y aprender nuevas tecnologías. Tengo experiencia en el desarrollo de sitios web con Astro, React, Tailwind y otras herramientas. Me gusta trabajar en equipo y resolver problemas complejos. Estoy buscando oportunidades laborales en empresas que valoren el talento, la creatividad y el compromiso. Si te interesa mi perfil, puedes contactarme a través de [LinkedIn](https://www.linkedin.com/in/josue-ferreyra/).
