@@ -1,0 +1,86 @@
+---
+import Navbar from '@/components/Navbar.astro';
+import { Player } from '@/components/Player';
+import { ViewTransitions } from 'astro:transitions';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es-AR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Proyecto para practicar técnicas de programación a traves de la creación de un clon de la plataforma de música Spotify" />
+		<meta name="keywords" content="spotify, music, proyect, clone, clon de spotify, astro">
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<ViewTransitions />
+	</head>
+
+	<body class="grid grid-rows-[1fr,auto] grid-cols-[auto,1fr,1fr] p-2 gap-2 min-h-screen bg-black">
+		<aside class="[grid-area:nav] bg-neutral-900 rounded-lg p-3">
+			<Navbar />
+		</aside>
+		<main class="[grid-area:main] bg-neutral-900 rounded-lg overflow-y-auto">
+			<slot />
+		</main>
+		<footer class="[grid-area:player] bg-neutral-900 rounded-lg relative">
+			<Player client:only />
+		</footer>
+	</body>
+
+</html>
+
+<style>
+	body {
+		grid-template-areas:
+			"nav main main"
+			"player player player"
+		;
+	}
+</style>
+
+<style is:global>
+	@font-face {
+		font-family: 'Circular Std';
+		src: url('../fonts/CircularStd-Light.otf') format('opentype');
+		font-weight: 300;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Circular Std';
+		src: url('../fonts/CircularStd-Medium.otf') format('opentype');
+		font-weight: 500;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Circular Std';
+		src: url('../fonts/CircularStd-Bold.otf') format('opentype');
+		font-weight: 700;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Circular Std';
+		src: url('../fonts/CircularStd-Black.otf') format('opentype');
+		font-weight: 900;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	:root {
+		font-family: 'Circular Std', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+		color-scheme: dark;
+		background-color: Canvas;
+		color: CanvasText;
+	}
+</style>
